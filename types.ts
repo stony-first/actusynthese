@@ -1,6 +1,7 @@
 export enum AppStatus {
   IDLE = 'IDLE',
   LOADING = 'LOADING',
+  STREAMING = 'STREAMING',
   SUCCESS = 'SUCCESS',
   ERROR = 'ERROR'
 }
@@ -30,4 +31,5 @@ export interface SummaryDisplayProps {
   summary: string;
   sources: Source[];
   onClear: () => void;
+  isStreaming?: boolean;
 }

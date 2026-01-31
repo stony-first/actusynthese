@@ -6,7 +6,7 @@
     <title>Stony ActuSynthèse - Résumé Journalistique</title>
     <!-- Tailwind CDN restored for immediate preview -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script type="importmap">
     {
       "imports": {
@@ -20,23 +20,59 @@
       }
     }
     </script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+              slate: {
+                850: '#1e293b', 
+                950: '#020617',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #f3f4f6;
+        transition: background-color 0.3s ease;
       }
-      /* Restore custom scrollbar styles */
-      textarea::-webkit-scrollbar {
-        width: 8px;
+      
+      /* Light Mode Background pattern */
+      body {
+        background-color: #f8fafc;
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 24px 24px;
       }
-      textarea::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+
+      /* Dark Mode Background pattern */
+      html.dark body {
+        background-color: #020617; /* Slate-950 */
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
       }
-      textarea::-webkit-scrollbar-thumb {
+
+      /* Custom scrollbar */
+      textarea::-webkit-scrollbar, div::-webkit-scrollbar {
+        width: 6px;
+      }
+      textarea::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      textarea::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
         background: #cbd5e1; 
-        border-radius: 4px;
+        border-radius: 10px;
       }
-      textarea::-webkit-scrollbar-thumb:hover {
+      html.dark textarea::-webkit-scrollbar-thumb, html.dark div::-webkit-scrollbar-thumb {
+        background: #475569;
+      }
+      textarea::-webkit-scrollbar-thumb:hover, div::-webkit-scrollbar-thumb:hover {
         background: #94a3b8; 
       }
     </style>
