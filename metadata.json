@@ -1,0 +1,5 @@
+{
+  "name": "ActuSynthèse AI",
+  "description": "An intelligent news summarizer powered by Gemini, designed to produce neutral, factual, and professional journalistic summaries.",
+  "requestFramePermissions": []
+}
