@@ -54,6 +54,12 @@ export const generateSummary = async (topic: string): Promise<SummaryResult> => 
 
   } catch (error: any) {
     console.error("Gemini API Error:", error);
+    
+    // Check specifically for Quota/Rate Limit errors
+    if (error.message && (error.message.includes('429') || error.message.includes('quota') || error.message.includes('RESOURCE_EXHAUSTED'))) {
+       throw new Error("⚠️ Quota API gratuit dépassé. Veuillez attendre une minute avant de réessayer.");
+    }
+
     throw new Error(error.message || "Une erreur est survenue lors de la recherche et de la génération.");
   }
 };

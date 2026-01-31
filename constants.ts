@@ -1,4 +1,4 @@
-export const MODEL_NAME = 'gemini-3-flash-preview';
+export const MODEL_NAME = 'gemini-flash-latest';
 
 export const SYSTEM_INSTRUCTION = `
 Tu es un agent d’intelligence artificielle spécialisé dans le journalisme de synthèse et la recherche d'actualités.

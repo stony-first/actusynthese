@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 tracking-tight">
-                Actu<span className="text-blue-600">Synthèse</span>
+                Stony <span className="text-blue-600">ActuSynthèse</span>
               </h1>
               <p className="text-xs text-gray-500 font-medium">Assistant Journalistique AI</p>
             </div>
